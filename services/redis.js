@@ -5,7 +5,7 @@ require('dotenv').config();
 const createRedisClient = () => {
     const client = redis.createClient({
         host: process.env.DB_HOST,
-        port: 6379,
+        port: 6379,   //local port 
         retry_strategy: (options) => {
             if (options.error && options.error.code === 'ECONNREFUSED') {
                 return new Error('Redis server is down');
