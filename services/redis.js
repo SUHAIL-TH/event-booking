@@ -1,9 +1,10 @@
 const redis = require('redis');
+require('dotenv').config();
 
 // Redis Client Configuration
 const createRedisClient = () => {
     const client = redis.createClient({
-        host: 'localhost',
+        host: process.env.DB_HOST,
         port: 6379,
         retry_strategy: (options) => {
             if (options.error && options.error.code === 'ECONNREFUSED') {

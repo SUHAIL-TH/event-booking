@@ -4,6 +4,7 @@ const { createRedisClient, connectRedis } = require('./services/redis');
 const { syncModels } = require('./models/model');
 const createRabbitMQService = require('./services/rabbit');
 const eventRouter = require('./routes/eventRoutes'); 
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;

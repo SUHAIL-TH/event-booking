@@ -1,10 +1,10 @@
 const { Sequelize } = require('sequelize');
 const mysql = require('mysql2/promise');
-
+require('dotenv').config();
 // MySQL Configuration
 const DB_NAME = 'event_booking_system';
-const DB_USER = 'root';
-const DB_PASSWORD = 'Suhail@123';
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_HOST = 'localhost';
 
 // Create the database if it doesn't exist

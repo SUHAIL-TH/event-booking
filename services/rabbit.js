@@ -1,5 +1,6 @@
 const amqp = require('amqplib');
 
+
 // RabbitMQ Service
 const createRabbitMQService = () => {
     const NOTIFICATION_QUEUE = 'email_notifications';
