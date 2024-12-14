@@ -90,7 +90,7 @@ const createEventController = (Event, Booking, redisClient, rabbitMQChannel) => 
         } catch (error) {
             await transaction.rollback();
             
-            // console.error('Booking Error:', error);
+          
             
             if (error.name === 'SequelizeUniqueConstraintError') {
                 return res.status(400).json({ error: 'Booking already exists' });
