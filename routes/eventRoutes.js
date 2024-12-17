@@ -10,7 +10,7 @@ module.exports = (Event, Booking, redisClient, rabbitMQChannel) => {
     rabbitMQChannel
   );
 
-  // Validation middleware
+ 
   const validate = (validations) => {
     return async (req, res, next) => {
       for (let validation of validations) {

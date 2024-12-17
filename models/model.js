@@ -90,12 +90,12 @@ const createBookingModel = (Event) => {
 };
 
 // Sync Models
-const syncModels = async (force = false) => {
+const syncModels = async () => {
     try {
         const Event = createEventModel();
         const Booking = createBookingModel(Event);
         
-        await sequelize.sync({ force: force });
+        await sequelize.sync({ force: false });
         console.log('All models were synchronized successfully.');
         
         return { Event, Booking };

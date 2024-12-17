@@ -36,6 +36,7 @@ const createEventController = (Event, Booking, redisClient, rabbitMQChannel) => 
     const bookEvent = async (req, res) => {
         const { eventId, userId } = req.body;
         const transaction = await Event.sequelize.transaction();
+        
 
         try {
             const event = await Event.findByPk(eventId, { transaction, lock: true });
@@ -97,9 +98,7 @@ const createEventController = (Event, Booking, redisClient, rabbitMQChannel) => 
             }
             
             res.status(500).json({ 
-                error: process.env.NODE_ENV === 'development' 
-                    ? error.message 
-                    : 'Failed to create booking' 
+               message:"somthing went wrong" 
             });
         }
     };
@@ -139,9 +138,7 @@ const createEventController = (Event, Booking, redisClient, rabbitMQChannel) => 
         } catch (error) {
             console.error('Booking Count Error:', error);
             res.status(500).json({ 
-                error: process.env.NODE_ENV === 'development' 
-                    ? error.message 
-                    : 'Failed to retrieve booking count' 
+                message:"somthing went wrong" 
             });
         }
     };

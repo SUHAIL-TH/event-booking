@@ -19,7 +19,7 @@ const startServer = async () => {
         await initializeDatabase();
 
         // Sync Models
-        const { Event, Booking } = await syncModels(false);
+        const { Event, Booking } = await syncModels();
 
         // Connect to Redis
         const redisClient = createRedisClient();
