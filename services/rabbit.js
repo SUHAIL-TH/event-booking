@@ -12,7 +12,7 @@ const createRabbitMQService = () => {
             
             return { connection, channel };
         } catch (error) {
-            console.error('RabbitMQ Connection Error:', error);
+            console.error('RabbitMQ Connection Error: ', error);
             throw error;
         }
     };
