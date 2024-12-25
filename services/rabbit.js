@@ -28,7 +28,7 @@ const createRabbitMQService = () => {
             console.error('Error sending notification:', error);
         }
     };
-
+    //this is for start consumer for notifaction sent by the rabbit mq
     const startConsumer = async (channel) => {
         try {
             channel.consume(NOTIFICATION_QUEUE, (msg) => {
