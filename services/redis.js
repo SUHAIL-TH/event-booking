@@ -23,6 +23,7 @@ const createRedisClient = () => {
     });
 
     return client;
+    
 };
 
 // Async connection wrapper
