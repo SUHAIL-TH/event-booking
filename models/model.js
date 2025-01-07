@@ -14,8 +14,6 @@ const createEventModel = () => {
             allowNull: false,
             validate: {
                 notEmpty: { msg: "Event name cannot be empty" },
-
-
                 len: { args: [2, 255], msg: "Event name must be between 2 and 255 characters" }
             }
         },
